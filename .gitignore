@@ -96,6 +96,4 @@ ENV/
 .direnv/python-3.5.1/bin/gunicorn_django
 .direnv/python-3.5.1/bin/gunicorn_paster
 .idea/
-exoticinsult/api/migrations/0001_initial.py
-exoticinsult/api/migrations/0002_day.py
-exoticinsult/api/migrations/0003_auto_20160624_2142.py
+
