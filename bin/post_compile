@@ -8,6 +8,6 @@ echo "-----> Running post-compile hook"
 
 # PUT ANY POST-BUILD STUFF HERE (like database migrations)
 # cd ~
-# python manage.py migrate
+python manage.py migrate
 
 echo "-----> Post-compile done"
