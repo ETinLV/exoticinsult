@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from exoticinsult.api.views import InsultPageView
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('exoticinsult.frontend.urls', namespace='frontend')),
+    url(r'^', InsultPageView.as_view(), name='today'),
 ]
 
