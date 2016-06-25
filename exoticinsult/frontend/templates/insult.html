@@ -1,14 +1,18 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
-Check
+<div class="center-rectangle">
+    <div class="date-title"><h1><br>{% now "l" %}<br>{% now "F" %}<br>{% now "jS" %}</h1></div>
 {{ insult.phrase }}
 {{ insult.translation }}
 {{ insult.language }}
+    </div>
 </body>
 </html>
