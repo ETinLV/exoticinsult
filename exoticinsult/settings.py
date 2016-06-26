@@ -51,6 +51,9 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    #Third Party MiddleWare
+    'easy_timezones.middleware.EasyTimezoneMiddleware',
 ]
 
 ROOT_URLCONF = 'exoticinsult.urls'
@@ -116,3 +119,8 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+#Geolite Date for timezone
+GEOIP_DATABASE = 'exoticinsult/api/geolite/GeoLiteCity.dat'
+GEOIPV6_DATABASE = 'exoticinsult/api/geolite/GeoLiteCityv6.dat'
+
