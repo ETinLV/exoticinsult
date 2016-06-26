@@ -40,7 +40,6 @@ body {
     display: inline-block;
     color: white;
     font-size: 6pc;
-    padding-top: 1pc;
 }
 
 .month {
@@ -56,4 +55,11 @@ body {
 .year {
     font-size: 1pc;
     color: white;
+}
+
+.title {
+    font-size: 1pc;
+    color: white;
+    display: block;
+    width: inherit;
 }

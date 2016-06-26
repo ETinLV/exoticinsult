@@ -9,11 +9,10 @@
 <body>
 
 <div class="center-rectangle">
-    <div class="date-title"><span class="day-of-week">{{ day.date|date:'l' }}</span>
+    <div class="date-title"><span class="title"> Exotic Insult Of The Day</span><span class="day-of-week">{{ day.date|date:'l' }}</span>
         <div class="date-box"><br><span class="month">{{ day.date|date:'F' }}</span><br><span class="day">{{ day.date|date:'j' }}</span><br><span class="year">{{ day.date|date:'Y' }}</span></div>
     </div>
     <div style="text-align: center">
-    <h2>Exotic Insult Of The Day:</h2>
         <h5>Language Of Origin: {{ insult.language }}</h5>
         <h1> {{ insult.phrase }}</h1>
     <h3>{{ insult.pronunciation }}</h3>
