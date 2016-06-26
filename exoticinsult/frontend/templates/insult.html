@@ -9,14 +9,14 @@
 <body>
 
 <div class="center-rectangle">
-    <div class="date-title" style="text-align: center"><h1 class="red"><br>{% now "l" %}<br>{% now "F" %}<br>{% now "jS" %}</h1></div>
+    <div class="date-title"><span class="day-of-week">{{ day.date|date:'l' }}</span>
+        <div class="date-box"><br><span class="month">{{ day.date|date:'F' }}</span><br><span class="day">{{ day.date|date:'j' }}</span><br><span class="year">{{ day.date|date:'Y' }}</span></div>
+    </div>
     <div style="text-align: center">
-    <h1>{{ insult.phrase }}</h1>
+    <h2>Exotic Insult Of The Day:</h2><h1> {{ insult.phrase }}</h1>
     <h3>{{ insult.pronunciation }}</h3>
-    <h5>{{ insult.language }}</h5>
+    <h5>Language Of Origin: {{ insult.language }}</h5>
     <h2>{{ insult.translation }}</h2>
-
-        TIMEZONE TEST {{ timezonetest }}
     </div>
 </div>
 </body>

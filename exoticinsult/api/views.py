@@ -1,10 +1,8 @@
-from django.db.models import Q
-
 from django.utils import timezone
-from django.utils.timezone import get_current_timezone
+from django.utils.datetime_safe import datetime
 from django.views.generic import TemplateView
 from exoticinsult.api import models
-
+from exoticinsult.api.helpers import get_insult
 
 
 class InsultPageView(TemplateView):
@@ -12,17 +10,19 @@ class InsultPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(InsultPageView, self).get_context_data(**kwargs)
-        date = kwargs.get('date', timezone.localtime(value=timezone.now(), timezone=get_current_timezone()).date())
 
-        # we need to make sure the insult has have been displayed in the previous year, but because we are generating
-        # data for past dates, we also need to make sure that the insult has not been used in the future year as well
-        defaults = {'insult': models.Insult.objects.exclude(
-                Q(days__date__range=[date - timezone.timedelta(days=365), date + timezone.timedelta(days=365)]) |
-                Q(days__isnull=False)).order_by('?').first()}
-        #if we can't get an insult we haven't used, we need to get some insult
-        if not defaults['insult']:
-            defaults['insult'] = models.Insult.objects.order_by('?').first()
+        # This is not quite right, as currently we are not getting the user's timezone. Once the frontend is converted
+        # to angular, we can get the client date from the frontend.
+        date = self.request.GET.get('date')
+        if date:
+            date = datetime.strptime(date, '%Y-%m-%d').date()
+        else:
+            date = timezone.now().date()
+
+        # We need an insult in case we need to create the day. We could use a try/except to only get the insult if their
+        # is not a day, but this is cleaner and should not slow anything down.
+        defaults = {'insult': get_insult(date)}
         day, created = models.Day.objects.get_or_create(pk=date, defaults=defaults)
         context['insult'] = day.insult
-        context['timezonetest'] = get_current_timezone()
+        context['day'] = day
         return context

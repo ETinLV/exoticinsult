@@ -2,7 +2,6 @@ body {
     background-color: #000000;
 }
 .center-rectangle {
-    display: inline-block;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -17,13 +16,44 @@ body {
 }
 
 .date-title {
+    display: inline-block;
     border-bottom: 2px solid#000000;
+    border-top:2px solid#000000;
     height: 10pc;
-    background-color: #BDE9FF;
-    margin-top: 0;
-    z-index: 100;
+    width: inherit;
+    background-color: #970112;
+    text-align: center;
+
+}
+.date-box {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 10pc;
+    height: inherit;
+    border-left:3px solid #000;
+    background-color: #970112;
+    text-align: center;
 }
 
-.red {
-    color: #a41515;
+.day-of-week {
+    display: inline-block;
+    color: white;
+    font-size: 6pc;
+    padding-top: 1pc;
+}
+
+.month {
+    font-size: 2pc;
+    color: white;
+}
+
+.day {
+    font-size: 3pc;
+    color: white;
+}
+
+.year {
+    font-size: 1pc;
+    color: white;
 }

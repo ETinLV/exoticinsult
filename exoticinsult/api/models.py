@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+from django.utils import timezone
+
 
 class Insult(models.Model):
     phrase = models.TextField()
@@ -12,7 +14,7 @@ class Insult(models.Model):
         return self.phrase
 
 class Day(models.Model):
-    date = models.DateField(auto_now_add=True, primary_key=True)
+    date = models.DateField(default=timezone.now, primary_key=True)
     insult = models.ForeignKey(Insult, related_name='days')
 
     def __str__(self):
