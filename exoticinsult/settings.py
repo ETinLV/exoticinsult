@@ -51,9 +51,6 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    #Third Party MiddleWare
-    'easy_timezones.middleware.EasyTimezoneMiddleware',
 ]
 
 ROOT_URLCONF = 'exoticinsult.urls'
