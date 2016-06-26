@@ -19,6 +19,9 @@ class InsultPageView(TemplateView):
         defaults = {'insult': models.Insult.objects.exclude(
                 Q(days__date__range=[date - timezone.timedelta(days=365), date + timezone.timedelta(days=365)]) |
                 Q(days__isnull=False)).order_by('?').first()}
+        #if we can't get an insult we haven't used, we need to get some insult
+        if not defaults['insult']:
+            defaults['insult'] = models.Insult.objects.order_by('?').first()
         day, created = models.Day.objects.get_or_create(pk=date, defaults=defaults)
         context['insult'] = day.insult
         context['timezonetest'] = get_current_timezone()
