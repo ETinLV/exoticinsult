@@ -1,1 +1,1 @@
-web: gunicorn exoticinsult.wsgi --log-file -
+web: newrelic-admin run-program gunicorn mysite.wsgi

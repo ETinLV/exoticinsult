@@ -1,3 +1,5 @@
+import newrelic as newrelic
+
 from exoticinsult.settings import *
 
 db_from_env = dj_database_url.config()
