@@ -1,5 +1,6 @@
 from django.utils import timezone
 from django.utils.datetime_safe import datetime
+from django.utils.timezone import localtime, now
 from django.views.generic import TemplateView
 from exoticinsult.api import models
 from exoticinsult.api.helpers import get_insult
@@ -17,7 +18,7 @@ class InsultPageView(TemplateView):
         if date:
             date = datetime.strptime(date, '%Y-%m-%d').date()
         else:
-            date = timezone.now().date()
+            date = localtime(now()).date()
 
         # We need an insult in case we need to create the day. We could use a try/except to only get the insult if their
         # is not a day, but this is cleaner and should not slow anything down.
