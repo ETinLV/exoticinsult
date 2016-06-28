@@ -62,3 +62,7 @@ body {
     display: inline-block;
     width: inherit;
 }
+
+.italic {
+    font-style: italic;
+}
