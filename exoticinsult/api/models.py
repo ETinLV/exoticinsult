@@ -18,4 +18,4 @@ class Day(models.Model):
     insult = models.ForeignKey(Insult, related_name='days')
 
     def __str__(self):
-        return self.date
+        return self.date.strftime('%Y-%m-%d')
