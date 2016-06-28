@@ -8,7 +8,7 @@ DATABASES['default'].update(db_from_env)
 ALLOWED_HOSTS = [
     '.exoticinsultoftheday.com'
 ]
-DEBUG=True
+DEBUG=False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
