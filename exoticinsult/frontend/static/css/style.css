@@ -70,3 +70,8 @@ body {
     text-align: center;
     margin-top: 10%;
 }
+
+.phrase {
+    font-size: 4pc;
+    font-weight: bolder;
+}
