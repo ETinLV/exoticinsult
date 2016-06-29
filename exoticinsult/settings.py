@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'exoticinsult.api.context_processors.show_google_analytics',
             ],
         },
     },
@@ -117,7 +118,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#Geolite Date for timezone
-GEOIP_DATABASE = 'exoticinsult/api/geolite/GeoLiteCity.dat'
-GEOIPV6_DATABASE = 'exoticinsult/api/geolite/GeoLiteCityv6.dat'
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 

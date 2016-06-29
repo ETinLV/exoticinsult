@@ -4,14 +4,12 @@ from django.utils.timezone import localtime, now
 from django.views.generic import TemplateView
 from exoticinsult.api import models
 from exoticinsult.api.helpers import get_insult
-
-
+from django.conf import settings
 class InsultPageView(TemplateView):
     template_name = 'insult.html'
 
     def get_context_data(self, **kwargs):
         context = super(InsultPageView, self).get_context_data(**kwargs)
-
         # This is not quite right, as currently we are not getting the user's timezone. Once the frontend is converted
         # to angular, we can get the client date from the frontend.
         date = self.request.GET.get('date')
