@@ -2,30 +2,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Exotic Insult Of The Day</title>
-    <meta name="description=" content="Exotic Insult Of The Day teaches you exiting ways to insult people
-    from around the world. Come back daily for new insult in a foreign language.">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta charset="UTF-8">
+  <title>Exotic Insult of the Day</title>
+  <meta name="description" content="Exotic Insult of the Day teaches you exciting new ways to insult people from around the world. Come back daily for a new insult in a foreign language." />
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
-<body>
 
-<div class="center-rectangle">
-    <div class="date-title">
-        <span class="title"> Exotic Insult Of The Day</span>
-        <span class="day-of-week">{{ day.date|date:'l' }}</span>
-        <div class="date-box"><br><span class="month">{{ day.date|date:'F' }}</span><br><span class="day">{{ day.date|date:'j' }}</span><br><span class="year">{{ day.date|date:'Y' }}</span></div>
+<body>
+  <div id="container">
+    <div class="header">
+      <h2>Exotic Insult of the Day</h2>
+        <p class="day-of-week">{{ day.date|date:'l' }}</p>
+              <div class="date-box">
+                  <span class="month-year">{{ day.date|date:'F' }}</span>
+                  <span class="day-of-week-abbr">{{ day.date|date:'j' }}</span>
+                  <span class="day">{{ day.date|date:'Y' }}</span>
+      </div>
     </div>
-    <div class="content">
-        <h5>Language Of Origin: {{ insult.language }}</h5>
-        <span class="phrase"> {{ insult.phrase }}<br></span>
-        <h3><span class="italic">({{ insult.pronunciation }})</span></h3>
-        <h4>Translation: </h4><h2>{{ insult.translation|title }}</h2>
+    <div class="insult">
+        <p class="origin">Language Of Origin: <span>{{ insult.language }}</span></p>
+        <p class="phrase"> {{ insult.phrase }}<br></p>
+        <p class="pronounce">({{ insult.pronunciation }})</p>
+        <p class="translation-header">Translation: </p>
+        <h3 class="translation-text">{{ insult.translation|title }}</h3>
     </div>
-</div>
+  </div>
 
 {% if analytics %}
-        <!-- Google Analytics Code-->
+    <!-- Google Analytics Code-->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
