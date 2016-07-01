@@ -11,7 +11,7 @@ class Insult(models.Model):
     translation = models.TextField()
 
     def __str__(self):
-        return self.phrase
+        return self.translation
 
 class Day(models.Model):
     date = models.DateField(default=timezone.now, primary_key=True)
