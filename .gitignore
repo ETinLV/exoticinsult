@@ -97,3 +97,8 @@ ENV/
 .direnv/python-3.5.1/bin/gunicorn_paster
 .idea/
 
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
