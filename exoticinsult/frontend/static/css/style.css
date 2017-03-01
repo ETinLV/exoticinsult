@@ -33,16 +33,16 @@ body {
 }
 
 .header h2 {
-  margin:0;
+  margin: 3px 0 0 0;
   text-align:center;
   font-size:16px;
   font-weight:100;
-  color:#E57373;
+  color:#ed8787;
 }
 
 .day-of-week {
   float:left;
-  font-size:90px;
+  font-size:85px;
   margin:0;
   margin-left:20px;
   margin-bottom:20px;
@@ -66,7 +66,6 @@ body {
 }
 .day-of-week-abbr {
   font-size:30px;
-  margin-top:10px;
 }
 .day {
   font-size:50px;
