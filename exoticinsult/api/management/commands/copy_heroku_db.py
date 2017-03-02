@@ -15,10 +15,19 @@ class Command(BaseCommand):
         self.get_db_settings()
 
     def add_arguments(self, parser):
-        pass
+
+        # Named (optional) arguments
+        parser.add_argument(
+            '--no_backup',
+            action='store_true',
+            dest='no_backup',
+            default=False,
+            help='Do not create a backup of the database on Heroku',
+        )
 
     def handle(self, *args, **options):
-        self.backup_db()
+        if not options['no_backup']:
+            self.backup_db()
         self.download_db()
         self.drop_db()
         self.create_db()
