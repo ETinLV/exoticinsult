@@ -133,3 +133,4 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+HEROKU_APP_NAME = 'exoticinsult'
