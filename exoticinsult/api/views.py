@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from django.utils import timezone
 from django.utils.datetime_safe import datetime
 from django.utils.timezone import localtime, now
@@ -24,4 +26,5 @@ class InsultPageView(TemplateView):
         day, created = models.Day.objects.get_or_create(pk=date, defaults=defaults)
         context['insult'] = day.insult
         context['day'] = day
+        context['yesterday'] = day.date - timedelta(days=1)
         return context

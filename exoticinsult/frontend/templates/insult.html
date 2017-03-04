@@ -28,6 +28,10 @@
         <h3 class="translation-text">{{ insult.translation|title }}</h3>
     </div>
   </div>
+    <div id="yesterday">
+      <a href="?date={{ yesterday|date:'Y-d-m' }}"> day </a>
+    </div>
+
 
 {% if analytics %}
     <!-- Google Analytics Code-->
